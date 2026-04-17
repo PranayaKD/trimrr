@@ -1,0 +1,37 @@
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8" id="dashboard-stats" hx-get="{% url 'dashboard' %}" hx-trigger="every 5s" hx-target="#dashboard-stats" hx-swap="outerHTML">
+    <!-- Total Links -->
+    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(15,23,42,0.04)]">
+        <p class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] text-on-surface-variant mb-2 px-1">Total Links</p>
+        <div class="flex items-baseline gap-2">
+            <span class="text-3xl font-black text-on-surface">{{ total_links }}</span>
+            <span class="text-[10px] text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded-full font-bold">Live</span>
+        </div>
+    </div>
+    
+    <!-- Total Clicks -->
+    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(15,23,42,0.04)]">
+        <p class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] text-on-surface-variant mb-2 px-1">Total Clicks</p>
+        <div class="flex items-baseline gap-2">
+            <span class="text-3xl font-black text-on-surface">{{ total_clicks }}</span>
+            <span class="text-[10px] text-primary bg-primary-container/10 px-2 py-0.5 rounded-full font-bold">Real-time</span>
+        </div>
+    </div>
+
+    <!-- Unique Visitors -->
+    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(15,23,42,0.04)]">
+        <p class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] text-on-surface-variant mb-2 px-1">Unique Visitors</p>
+        <div class="flex items-baseline gap-2">
+            <span class="text-3xl font-black text-on-surface">{{ unique_visitors }}</span>
+            <span class="text-[10px] text-secondary bg-secondary-container/10 px-2 py-0.5 rounded-full font-bold underline">Estimated</span>
+        </div>
+    </div>
+
+    <!-- Last Clicked -->
+    <div class="bg-surface-container-lowest p-6 rounded-xl shadow-[0px_10px_30px_rgba(15,23,42,0.04)]">
+        <p class="font-['Inter'] text-[10px] font-bold uppercase tracking-[0.05em] text-on-surface-variant mb-2 px-1">Last Clicked</p>
+        <div class="flex flex-col">
+            <span class="text-2xl font-black text-on-surface">{{ last_clicked_str }}</span>
+            <span class="text-[10px] text-on-surface-variant font-medium">{{ last_clicked_date }}</span>
+        </div>
+    </div>
+</div>

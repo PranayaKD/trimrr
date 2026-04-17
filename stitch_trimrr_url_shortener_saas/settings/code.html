@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Settings | Trimrr</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#311400",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#dae2fd",
+                        "on-background": "#191c1e",
+                        "on-secondary-container": "#5c647a",
+                        "on-surface-variant": "#424754",
+                        "on-primary": "#ffffff",
+                        "outline": "#727785",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2170e4",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed": "#131b2e",
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-primary": "#adc6ff",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary": "#924700",
+                        "surface": "#f7f9fb",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "primary": "#0058be",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-container": "#fefcff",
+                        "surface-tint": "#005ac2",
+                        "surface-dim": "#d8dadc",
+                        "secondary-container": "#dae2fd",
+                        "background": "#f7f9fb",
+                        "outline-variant": "#c2c6d6",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#d8e2ff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceef0",
+                        "primary-fixed-dim": "#adc6ff",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-container": "#b75b00",
+                        "tertiary-fixed": "#ffdcc6",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#565e74",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-container-high": "#e6e8ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Desktop Side Navigation -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 bg-slate-900 dark:bg-black h-screen w-64 hidden md:flex z-40">
+<div class="px-6 mb-8">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center overflow-hidden">
+<img alt="Trimrr Logo" class="w-full h-full" data-alt="Abstract geometric logo for a precision digital brand with sharp angles and cobalt blue accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZJRt41IKBZClJSUqon2DT2qmI-k0hhf6c8s1HUEqBjm3wEnOikK6IU-FQAXDTO2CXq9tUsbIbtybFPwXT_pMJ_qQYbOlFOA6vvOQoAfPqsepxFtYVEpbabLy7sc32WX96terpOBvF5gFStixntdECIXu6xBPnqCjrD0V6C_nf2VPUEFLKo5McTxw9wP3-h5mZgiXfxiA68xU3pGmVboUeDDM36wdDE0LDABDoA1jbz6iMvH1Qj_9O0d4XXth6xLWbwSzlneYmgb0"/>
+</div>
+<div>
+<h1 class="text-white font-bold text-lg leading-none">Trimrr</h1>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold mt-1">Precision Architect</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 flex flex-col">
+<a class="text-slate-400 hover:text-white px-4 py-3 mx-2 transition-all duration-200 flex items-center gap-3 group" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[11px] font-semibold">Links</span>
+</a>
+<a class="text-slate-400 hover:text-white px-4 py-3 mx-2 transition-all duration-200 flex items-center gap-3 group" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[11px] font-semibold">Analytics</span>
+</a>
+<!-- Active Tab: Settings -->
+<a class="bg-blue-600 text-white rounded-lg mx-2 px-4 py-3 flex items-center gap-3 group shadow-lg shadow-blue-900/20 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[11px] font-semibold">Settings</span>
+</a>
+<a class="text-slate-400 hover:text-white px-4 py-3 mx-2 transition-all duration-200 flex items-center gap-3 group" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[11px] font-semibold">Support</span>
+</a>
+</nav>
+<div class="mt-auto px-2">
+<button class="w-full bg-slate-800 hover:bg-slate-700 text-white py-3 rounded-lg mb-6 flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[11px] font-semibold">New Link</span>
+</button>
+<a class="text-slate-400 hover:text-white px-4 py-3 flex items-center gap-3 group" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+<span class="font-['Inter'] uppercase tracking-widest text-[11px] font-semibold">Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 min-h-screen pb-24 md:pb-12">
+<!-- Top App Bar (Mobile & Header Anchor) -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-30 shadow-sm dark:shadow-none no-border">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="md:hidden text-xl font-bold text-slate-900 dark:text-white">Trimrr</span>
+<h2 class="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Settings</h2>
+</div>
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high flex items-center justify-center">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up professional headshot of a person with a clean minimal aesthetic and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKJ4lzW4Z-qdKoLc0oQA_ay5UsXcnVslfAxtYxhX0y0286en95rAe39HNRqxUNN0y0z_TgNh2kDxsxzMEEv_8mbinJ-S81Qt4-8opYIqRtpKAzhgKmKX-8pKT7qvf9p1hiVYRpGq0zXdeDPfVDFJEPNjkbKIRxoFbTjn9ezFMFhMSO8l6p6E3f8JW1tT0FWBm2MqmzeaKC47iPTu3zgQ6lBtjL_KEBVVh3YwvIXYDCCkbowyS7pwHwQ59E3LHUdvHlTfpJfjZhtvo"/>
+</button>
+</div>
+</div>
+</header>
+<div class="max-w-6xl mx-auto px-6 pt-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+<!-- Left Column: Primary Settings -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Profile Information Card -->
+<section class="bg-surface-container-lowest rounded-xl p-8 transition-all hover:shadow-lg hover:shadow-slate-200/50">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-primary-container/10 rounded-lg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div>
+<h3 class="text-title-lg font-semibold tracking-tight text-slate-900">Profile Information</h3>
+<p class="text-label-sm uppercase tracking-widest text-on-surface-variant mt-1">Identity Management</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-sm uppercase tracking-widest text-on-surface-variant ml-1">Full Name</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant/40 focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-lg py-3 px-4 transition-all" type="text" value="Alexander Trimrr"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm uppercase tracking-widest text-on-surface-variant ml-1">Email Address</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant/40 focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-lg py-3 px-4 transition-all" type="email" value="alexander@trimrr.io"/>
+</div>
+</div>
+<div class="pt-4 flex justify-end">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-3 rounded-xl font-semibold shadow-md hover:opacity-90 active:scale-95 transition-all">
+                                    Save Changes
+                                </button>
+</div>
+</div>
+</section>
+<!-- Change Password Card -->
+<section class="bg-surface-container-lowest rounded-xl p-8 transition-all hover:shadow-lg hover:shadow-slate-200/50">
+<div class="flex items-center gap-4 mb-8">
+<div class="w-12 h-12 bg-tertiary-container/10 rounded-lg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="lock">lock</span>
+</div>
+<div>
+<h3 class="text-title-lg font-semibold tracking-tight text-slate-900">Security Credentials</h3>
+<p class="text-label-sm uppercase tracking-widest text-on-surface-variant mt-1">Access Protocol</p>
+</div>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="text-label-sm uppercase tracking-widest text-on-surface-variant ml-1">Current Password</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant/40 focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-lg py-3 px-4 transition-all" placeholder="••••••••••••" type="password"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="text-label-sm uppercase tracking-widest text-on-surface-variant ml-1">New Password</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant/40 focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-lg py-3 px-4 transition-all" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="text-label-sm uppercase tracking-widest text-on-surface-variant ml-1">Confirm New Password</label>
+<input class="w-full bg-surface-container-lowest border-outline-variant/40 focus:border-primary focus:ring-4 focus:ring-primary/10 rounded-lg py-3 px-4 transition-all" type="password"/>
+</div>
+</div>
+<div class="pt-4 flex justify-end">
+<button class="bg-slate-100 hover:bg-slate-200 text-slate-900 px-8 py-3 rounded-xl font-semibold active:scale-95 transition-all">
+                                    Update Password
+                                </button>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Secondary Actions & Danger Zone -->
+<div class="space-y-8">
+<!-- Subscription Plan (Extra contextual component) -->
+<section class="bg-primary text-white rounded-xl p-8 overflow-hidden relative group">
+<div class="absolute -right-8 -top-8 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:bg-white/20 transition-all"></div>
+<h3 class="text-label-sm uppercase tracking-[0.2em] font-bold opacity-80">Pro Plan</h3>
+<p class="text-2xl font-bold mt-2">Precision Tier</p>
+<p class="text-body-md mt-4 opacity-90 leading-relaxed">Unlock unlimited short links and detailed custom analytics.</p>
+<button class="mt-6 w-full bg-white text-primary py-3 rounded-lg font-bold text-sm tracking-tight hover:bg-opacity-90 active:scale-95 transition-all">
+                            Manage Subscription
+                        </button>
+</section>
+<!-- Danger Zone Card -->
+<section class="bg-surface-container-lowest rounded-xl p-8 border border-error/10 hover:shadow-lg hover:shadow-error/5 transition-all">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-error/10 rounded-lg flex items-center justify-center text-error">
+<span class="material-symbols-outlined" data-icon="dangerous">dangerous</span>
+</div>
+<div>
+<h3 class="text-title-lg font-semibold tracking-tight text-error">Danger Zone</h3>
+<p class="text-label-sm uppercase tracking-widest text-on-surface-variant mt-1">Irreversible Actions</p>
+</div>
+</div>
+<p class="text-body-md text-on-surface-variant mb-6 leading-relaxed">
+                            Deleting your account will permanently erase all shortened links, tracking data, and account preferences. This cannot be undone.
+                        </p>
+<button class="w-full bg-error-container text-on-error-container py-3 rounded-lg font-bold text-sm tracking-tight hover:bg-error hover:text-white transition-all active:scale-95">
+                            Delete Account
+                        </button>
+</section>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-slate-100 dark:border-slate-900 bg-slate-50 dark:bg-slate-950 mt-12">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="font-bold text-slate-900 dark:text-white">Trimrr Editorial.</span>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-blue-600 transition-colors font-['Inter'] text-sm" href="#">Terms</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors font-['Inter'] text-sm" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors font-['Inter'] text-sm" href="#">API Docs</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors font-['Inter'] text-sm" href="#">Status</a>
+</div>
+<p class="font-['Inter'] text-sm text-slate-500">© 2024 Trimrr Editorial. Built for Precision.</p>
+</div>
+</footer>
+</main>
+<!-- Mobile Bottom Navigation -->
+<nav class="fixed bottom-0 w-full z-50 md:hidden bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_rgba(0,0,0,0.05)] rounded-t-2xl px-4 pt-2 pb-safe flex justify-around items-center">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:bg-slate-50 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:bg-slate-50 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="font-['Inter'] text-[10px] font-medium">Links</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 active:bg-slate-50 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-['Inter'] text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 rounded-xl px-3 py-1 scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="settings" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="font-['Inter'] text-[10px] font-medium">Settings</span>
+</a>
+</nav>
+<!-- Confirmation Modal (Hidden by Default/Mockup state) -->
+<div class="fixed inset-0 z-50 hidden items-center justify-center bg-on-background/40 backdrop-blur-sm p-6">
+<div class="bg-surface-container-lowest max-w-md w-full rounded-2xl p-8 shadow-2xl scale-100 animate-in fade-in zoom-in duration-300">
+<div class="w-16 h-16 bg-error/10 rounded-full flex items-center justify-center text-error mx-auto mb-6">
+<span class="material-symbols-outlined text-4xl" data-icon="warning">warning</span>
+</div>
+<h3 class="text-xl font-bold text-center text-slate-900 tracking-tight">Are you absolutely sure?</h3>
+<p class="text-body-md text-on-surface-variant text-center mt-4 leading-relaxed">
+                This action is irreversible. All your digital link assets and analytical data will be purged from our servers.
+            </p>
+<div class="mt-8 flex flex-col gap-3">
+<button class="w-full bg-error text-white py-4 rounded-xl font-bold active:scale-[0.98] transition-all">
+                    Yes, Delete My Account
+                </button>
+<button class="w-full bg-surface-container-low text-slate-600 py-4 rounded-xl font-semibold hover:bg-surface-container-high transition-all">
+                    Cancel and Keep Account
+                </button>
+</div>
+</div>
+</div>
+</body></html>

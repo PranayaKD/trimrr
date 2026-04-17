@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Pricing | Trimrr Editorial{% endblock %}
+
+{% block extra_head %}
+<style>
+    .pricing-gradient {
+        background: linear-gradient(135deg, #0058be 0%, #2170e4 100%);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<main class="min-h-screen bg-surface">
+    <!-- Hero Section -->
+    <section class="max-w-7xl mx-auto px-6 pt-20 pb-12 text-center">
+        <h1 class="text-[2.75rem] font-extrabold tracking-tight text-on-background mb-6">
+            Simple, Transparent Pricing
+        </h1>
+        <p class="text-on-surface-variant text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+            Choose the architectural foundation for your digital reach. Scale your precision without hidden complexities.
+        </p>
+        
+
+    </section>
+
+    <!-- Pricing Cards -->
+    <section class="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Free Plan -->
+        <div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:shadow-lg transition-shadow">
+            <div class="mb-8">
+                <h3 class="text-[0.6875rem] font-bold tracking-[0.05em] text-on-surface-variant uppercase mb-2">Free</h3>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-on-background">₹0</span>
+                    <span class="text-on-surface-variant text-sm">/mo</span>
+                </div>
+            </div>
+            <ul class="space-y-4 mb-10 flex-grow">
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+                    <span class="text-sm text-on-surface">Up to 15 Short links/mo</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+                    <span class="text-sm text-on-surface">Basic analytics</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+                    <span class="text-sm text-on-surface">Standard redirects</span>
+                </li>
+            </ul>
+            <a href="{% url 'account_signup' %}" class="w-full py-3 px-4 rounded-lg bg-secondary-container text-on-secondary-container font-semibold hover:opacity-90 transition-all text-center">
+                Get Started
+            </a>
+        </div>
+
+        <!-- Pro Plan (Most Popular) -->
+        <div class="pricing-gradient p-8 rounded-xl flex flex-col h-full shadow-xl transform md:scale-105 relative z-10 border border-primary-container">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase">
+                Most Popular
+            </div>
+            <div class="mb-8">
+                <h3 class="text-[0.6875rem] font-bold tracking-[0.05em] text-blue-100 uppercase mb-2">Pro</h3>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-white">₹399</span>
+                    <span class="text-blue-100 text-sm">/yr</span>
+                </div>
+            </div>
+            <ul class="space-y-4 mb-10 flex-grow">
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-blue-200 text-sm mt-0.5" style="font-variation-settings: 'FILL' 1;">check</span>
+                    <span class="text-sm text-white">Unlimited Short links</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-blue-200 text-sm mt-0.5" style="font-variation-settings: 'FILL' 1;">check</span>
+                    <span class="text-sm text-white">Advanced editorial metrics</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-blue-200 text-sm mt-0.5" style="font-variation-settings: 'FILL' 1;">check</span>
+                    <span class="text-sm text-white">Custom domain support</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-blue-200 text-sm mt-0.5" style="font-variation-settings: 'FILL' 1;">check</span>
+                    <span class="text-sm text-white">QR Code generator</span>
+                </li>
+            </ul>
+            <a href="{% url 'checkout_pro' %}" class="w-full py-3 px-4 rounded-lg bg-white text-primary font-black shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all text-center flex flex-col items-center justify-center leading-tight">
+                <span>Upgrade to Pro</span>
+            </a>
+        </div>
+
+        <!-- Business Plan -->
+        <div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:shadow-lg transition-shadow">
+            <div class="mb-8">
+                <h3 class="text-[0.6875rem] font-bold tracking-[0.05em] text-on-surface-variant uppercase mb-2">Business</h3>
+                <div class="flex items-baseline gap-1">
+                    <span class="text-4xl font-bold text-on-background">₹1,999</span>
+                    <span class="text-on-surface-variant text-sm">/mo</span>
+                </div>
+            </div>
+            <ul class="space-y-4 mb-10 flex-grow">
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+                    <span class="text-sm text-on-surface">Everything in Pro</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+                    <span class="text-sm text-on-surface">Team collaboration (10 seats)</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+                    <span class="text-sm text-on-surface">API access & webhooks</span>
+                </li>
+                <li class="flex items-start gap-3">
+                    <span class="material-symbols-outlined text-primary text-sm mt-0.5">check</span>
+                    <span class="text-sm text-on-surface">SLA & Priority support</span>
+                </li>
+            </ul>
+            <button disabled class="w-full py-3 px-4 rounded-lg border-2 border-outline-variant text-on-surface-variant font-bold cursor-not-allowed text-center flex flex-col items-center justify-center leading-tight">
+                <span>Coming Soon</span>
+                <span class="text-[10px] font-normal opacity-70 mt-0.5">Payment Gateway Pending</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="max-w-4xl mx-auto px-6 py-24 mb-20">
+        <h2 class="text-2xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+        <div class="space-y-4">
+            <div class="bg-surface-container-low rounded-xl p-6">
+                <h4 class="font-bold text-on-surface mb-2">Can I change my plan later?</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed">Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and billing is adjusted pro-rata.</p>
+            </div>
+            <div class="bg-surface-container-low rounded-xl p-6">
+                <h4 class="font-bold text-on-surface mb-2">Do you offer custom domains?</h4>
+                <p class="text-sm text-on-surface-variant leading-relaxed">Absolutely. Pro and Business users can connect multiple custom domains to maintain brand consistency.</p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

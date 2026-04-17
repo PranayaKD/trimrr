@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-fixed": "#001a42",
+                      "surface-container-high": "#e6e8ea",
+                      "primary-fixed": "#d8e2ff",
+                      "surface-bright": "#f7f9fb",
+                      "surface-container-low": "#f2f4f6",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#311400",
+                      "tertiary": "#924700",
+                      "on-surface": "#191c1e",
+                      "secondary-container": "#dae2fd",
+                      "on-secondary-fixed": "#131b2e",
+                      "outline": "#727785",
+                      "on-error": "#ffffff",
+                      "inverse-surface": "#2d3133",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "on-primary": "#ffffff",
+                      "on-secondary-container": "#5c647a",
+                      "tertiary-fixed-dim": "#ffb786",
+                      "surface-container": "#eceef0",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-surface-variant": "#424754",
+                      "surface-dim": "#d8dadc",
+                      "inverse-primary": "#adc6ff",
+                      "tertiary-fixed": "#ffdcc6",
+                      "inverse-on-surface": "#eff1f3",
+                      "tertiary-container": "#b75b00",
+                      "on-tertiary-container": "#fffbff",
+                      "on-primary-container": "#fefcff",
+                      "outline-variant": "#c2c6d6",
+                      "error-container": "#ffdad6",
+                      "primary-fixed-dim": "#adc6ff",
+                      "primary": "#0058be",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "surface-variant": "#e0e3e5",
+                      "error": "#ba1a1a",
+                      "on-secondary": "#ffffff",
+                      "secondary": "#565e74",
+                      "on-error-container": "#93000a",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#005ac2",
+                      "surface": "#f7f9fb",
+                      "secondary-fixed": "#dae2fd",
+                      "background": "#f7f9fb",
+                      "primary-container": "#2170e4",
+                      "on-primary-fixed-variant": "#004395",
+                      "on-tertiary-fixed-variant": "#723600",
+                      "on-background": "#191c1e"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["Inter"],
+                      "body": ["Inter"],
+                      "label": ["Inter"]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar (Shared Component Execution) -->
+<aside class="fixed left-0 top-0 h-full w-64 hidden md:flex flex-col bg-slate-900 shadow-2xl p-4 gap-2 z-50">
+<div class="mb-8 px-2">
+<h1 class="text-xl font-black text-white tracking-tighter">Trimrr</h1>
+<p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-1">Premium Plan</p>
+</div>
+<button class="mb-6 flex items-center justify-center gap-2 bg-blue-600 text-white rounded-lg px-4 py-3 shadow-lg shadow-blue-500/20 font-['Inter'] text-sm font-medium duration-200 ease-in-out">
+<span class="material-symbols-outlined">add</span>
+            New Link
+        </button>
+<nav class="flex flex-col gap-2">
+<div class="text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg p-3 flex items-center gap-3 transition-all font-['Inter'] text-sm font-medium">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</div>
+<!-- Active State: Analytics -->
+<div class="bg-blue-600 text-white rounded-lg shadow-lg shadow-blue-500/20 p-3 flex items-center gap-3 transition-all font-['Inter'] text-sm font-medium">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span>Analytics</span>
+</div>
+<div class="text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg p-3 flex items-center gap-3 transition-all font-['Inter'] text-sm font-medium">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span>My Links</span>
+</div>
+<div class="text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg p-3 flex items-center gap-3 transition-all font-['Inter'] text-sm font-medium">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</div>
+</nav>
+<div class="mt-auto pt-6 border-t border-slate-800 flex items-center gap-3 px-2">
+<img alt="User" class="w-8 h-8 rounded-full" data-alt="close up professional headshot of a person with a friendly expression in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEnEPDD27J-WvJqgLXmMnGJC6PBvB1ekiyLctYbgKMkd3XLD5k86s9od-1rMdQRNIIsEBx8mGJHKEI5YvSC6pvFABMC1qBYXK2CPng3u3mMlZrk9V9QQIg_CPAEfl03Iniw4Tx70isGt2Ytnp2ur25rim170weWtAo7AxAJUWEZgquycP4v980fa_XM6sGiwTcMV3KA9WaHru6qbmn9vETOI3GHKb92N6WQqQPnnG0CHok61kZDaYHmCsysf48WCEIvtjRqc-ES4o"/>
+<div class="flex-1 overflow-hidden">
+<p class="text-sm font-semibold text-white truncate">User Profile</p>
+<div class="text-slate-400 hover:text-white transition-all flex items-center gap-2 cursor-pointer font-['Inter'] text-xs font-medium">
+<span class="material-symbols-outlined text-xs" data-icon="logout">logout</span>
+<span>Log Out</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="md:ml-64 min-h-screen flex flex-col">
+<!-- Top Action Bar -->
+<header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md px-6 py-6 flex flex-col gap-2 md:flex-row md:items-center justify-between">
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-1 text-primary hover:text-primary-container transition-colors text-sm font-semibold" href="#">
+<span class="material-symbols-outlined text-sm">arrow_back</span>
+                    ← My Links
+                </a>
+<h2 class="text-3xl font-extrabold tracking-tighter text-on-surface">Link Analytics</h2>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high px-4 py-2 rounded-lg text-sm font-semibold transition-all">
+                    Export CSV
+                </button>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg text-sm font-semibold shadow-sm hover:opacity-90 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">ios_share</span>
+                    Share Link
+                </button>
+</div>
+</header>
+<div class="p-6 space-y-8 max-w-7xl">
+<!-- Stat Cards Bento -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Total Clicks -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-primary/10">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Total Clicks</span>
+<div class="w-10 h-10 bg-primary-container/10 rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="touch_app">touch_app</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black tracking-tighter text-on-surface">24,812</span>
+<span class="text-xs font-bold text-tertiary-container flex items-center bg-tertiary-fixed px-2 py-0.5 rounded-full">+12%</span>
+</div>
+</div>
+<!-- Unique Visitors -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-primary/10">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Unique Visitors</span>
+<div class="w-10 h-10 bg-secondary-container/30 rounded-full flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" data-icon="person_search">person_search</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black tracking-tighter text-on-surface">18,290</span>
+<span class="text-xs font-bold text-on-surface-variant flex items-center bg-surface-container px-2 py-0.5 rounded-full">92% new</span>
+</div>
+</div>
+<!-- Last Clicked -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-primary/10">
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Last Clicked</span>
+<div class="w-10 h-10 bg-tertiary-fixed rounded-full flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined" data-icon="update">update</span>
+</div>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="text-4xl font-black tracking-tighter text-on-surface">Today</span>
+<span class="text-xs font-bold text-on-surface-variant ml-auto">14:02 PM</span>
+</div>
+</div>
+</section>
+<!-- Performance Chart Section -->
+<section class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 mb-12">
+<div class="flex flex-col">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Clicks Over Time</h3>
+<p class="text-sm text-on-surface-variant">Historical performance of your shortened link.</p>
+</div>
+<div class="bg-surface-container-low p-1 rounded-lg flex items-center">
+<button class="px-4 py-1.5 text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors">Weekly</button>
+<button class="px-6 py-1.5 text-sm font-bold text-white bg-primary rounded-md shadow-sm">Monthly</button>
+<button class="px-4 py-1.5 text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors">Yearly</button>
+</div>
+</div>
+<!-- Simulated Bar Chart Visualization -->
+<div class="h-64 w-full flex items-end gap-2 md:gap-4 group">
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[40%] hover:bg-primary-container transition-all cursor-pointer relative group/bar">
+<div class="opacity-0 group-hover/bar:opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded">2.1k</div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[65%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-primary-container rounded-t-lg h-[90%] relative group/bar">
+<div class="opacity-100 absolute -top-8 left-1/2 -translate-x-1/2 bg-on-surface text-white text-[10px] px-2 py-1 rounded">4.8k</div>
+</div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[55%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[45%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[75%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[60%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[40%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[65%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[95%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[50%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+<div class="flex-1 bg-surface-container-low rounded-t-lg h-[30%] hover:bg-primary-container transition-all cursor-pointer relative group/bar"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant px-1">
+<span>Jan</span><span>Feb</span><span>Mar</span><span>Apr</span><span>May</span><span>Jun</span><span>Jul</span><span>Aug</span><span>Sep</span><span>Oct</span><span>Nov</span><span>Dec</span>
+</div>
+</section>
+<!-- Link Info & QR Section -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Info Details -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-8 rounded-xl shadow-sm space-y-8">
+<div class="space-y-2">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Short Link</label>
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-lg group">
+<span class="text-2xl font-black text-primary tracking-tight">trimrr.co/summer-sale-24</span>
+<button class="ml-auto w-10 h-10 rounded-full bg-white flex items-center justify-center hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-on-surface" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-1">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Original Destination</label>
+<p class="text-sm font-medium text-on-surface break-all">https://ecommerce-store-global.com/campaigns/2024/summer-sale-offers-exclusive-redirect</p>
+</div>
+<div class="space-y-1">
+<label class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Created On</label>
+<p class="text-sm font-medium text-on-surface">June 12, 2024 — 09:44 AM</p>
+</div>
+</div>
+</div>
+<!-- QR Code Thumbnail -->
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm flex flex-col items-center justify-center text-center gap-6 border-2 border-dashed border-outline-variant">
+<div class="relative p-2 bg-white rounded-lg shadow-sm">
+<img alt="QR Code" class="w-32 h-32" data-alt="clean digital qr code for a website link with a minimalist black and white pattern on a white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYClCbb8grhgaoMUlvTEjaWlOqE7_m-BpP0uVM2V1UqtSogJnK9hQMDXFpipgecVI2ll7TRH0daH6hIdw01euytsRGnzO5dTsOiweB1zNY0unB_9ZwvIJPX2OLXgIEgREspSf4dDIzpsS4QeGF5kmcPPNlVm3KwKMu9Z3wDXsQMjznT97ObmIgLz3xA9gELPah_InJrAD-i-boN2s-m4HEu-Srl39Stb5pw_JTO84lxmevNImHiRVjV-3xX7KNLI39CD_hFRzy8Jg"/>
+</div>
+<div class="space-y-2">
+<h4 class="font-bold text-on-surface">QR Code Access</h4>
+<p class="text-xs text-on-surface-variant">Perfect for print materials and offline campaigns.</p>
+</div>
+<button class="w-full py-3 bg-secondary-container text-on-secondary-container font-bold rounded-lg text-sm hover:opacity-80 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                        Download PNG
+                    </button>
+</div>
+</section>
+<!-- Recent Clicks Table -->
+<section class="space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-xl font-bold tracking-tight text-on-surface">Recent Activity</h3>
+<div class="flex items-center gap-2 text-primary text-xs font-bold uppercase tracking-widest cursor-pointer">
+                        View Log
+                        <span class="material-symbols-outlined text-sm">trending_flat</span>
+</div>
+</div>
+<!-- Web Table -->
+<div class="hidden md:block overflow-hidden bg-surface-container-lowest rounded-xl shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low">
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Timestamp</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">IP Address</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Browser</th>
+<th class="px-6 py-4 text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Device</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container">
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 text-sm font-medium">Just now</td>
+<td class="px-6 py-4 text-sm font-mono text-on-surface-variant">192.168.1.104</td>
+<td class="px-6 py-4 text-sm">Chrome 125.0</td>
+<td class="px-6 py-4 text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">smartphone</span>
+                                    Mobile
+                                </td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 text-sm font-medium">3 mins ago</td>
+<td class="px-6 py-4 text-sm font-mono text-on-surface-variant">45.12.89.231</td>
+<td class="px-6 py-4 text-sm">Safari Mobile</td>
+<td class="px-6 py-4 text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">smartphone</span>
+                                    Mobile
+                                </td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="px-6 py-4 text-sm font-medium">12 mins ago</td>
+<td class="px-6 py-4 text-sm font-mono text-on-surface-variant">88.204.1.12</td>
+<td class="px-6 py-4 text-sm">Firefox 120.4</td>
+<td class="px-6 py-4 text-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">desktop_windows</span>
+                                    Desktop
+                                </td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Mobile Cards -->
+<div class="md:hidden space-y-4">
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm space-y-3">
+<div class="flex justify-between items-center border-b border-surface-container pb-2">
+<span class="text-xs font-bold text-primary">Just now</span>
+<span class="text-xs font-mono text-on-surface-variant">192.168.1.104</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Chrome 125.0</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">smartphone</span> Mobile</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm space-y-3">
+<div class="flex justify-between items-center border-b border-surface-container pb-2">
+<span class="text-xs font-bold text-on-surface-variant">3 mins ago</span>
+<span class="text-xs font-mono text-on-surface-variant">45.12.89.231</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-on-surface-variant">Safari Mobile</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">smartphone</span> Mobile</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer (Shared Component Execution) -->
+<footer class="w-full mt-auto bg-slate-950 flex flex-col items-center py-12 px-6 gap-8 text-center border-t border-slate-800">
+<div class="text-lg font-bold text-white tracking-tighter">Trimrr Architecture.</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-['Inter'] text-xs text-slate-500 hover:text-white transition-colors" href="#">Privacy</a>
+<a class="font-['Inter'] text-xs text-slate-500 hover:text-white transition-colors" href="#">Terms</a>
+<a class="font-['Inter'] text-xs text-slate-500 hover:text-white transition-colors" href="#">API Documentation</a>
+<a class="font-['Inter'] text-xs text-slate-500 hover:text-white transition-colors" href="#">Status</a>
+</div>
+<p class="font-['Inter'] text-xs text-slate-500 opacity-60">© 2024 Trimrr Architecture. All rights reserved.</p>
+</footer>
+</main>
+<!-- BottomNavBar (Shared Component Execution - Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-white/90 dark:bg-slate-950/90 backdrop-blur-xl md:hidden shadow-[0_-10px_30px_rgba(0,0,0,0.05)] border-t border-slate-100">
+<div class="flex flex-col items-center text-slate-400 active:bg-slate-100 transition-all p-2 rounded-xl">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center text-slate-400 active:bg-slate-100 transition-all p-2 rounded-xl">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Links</span>
+</div>
+<!-- Active State: Stats -->
+<div class="flex flex-col items-center text-blue-600 bg-blue-50 dark:bg-blue-900/30 rounded-xl px-4 py-1 transition-all">
+<span class="material-symbols-outlined" data-icon="query_stats" style="font-variation-settings: 'FILL' 1;">query_stats</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Stats</span>
+</div>
+<div class="flex flex-col items-center text-slate-400 active:bg-slate-100 transition-all p-2 rounded-xl">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-bold uppercase tracking-widest mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

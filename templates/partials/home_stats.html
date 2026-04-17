@@ -1,0 +1,10 @@
+<div class="grid grid-cols-2 gap-4" id="home-stats" hx-get="{% url 'home' %}" hx-trigger="every 10s" hx-swap="outerHTML">
+    <div class="p-5 bg-surface-container-low rounded-2xl border border-outline-variant/5">
+        <p class="text-[9px] font-bold text-on-surface-variant uppercase tracking-widest mb-2">Total Clicks</p>
+        <p class="text-3xl font-black text-on-surface tracking-tighter">{{ total_clicks_formatted|default:"0" }}</p>
+    </div>
+    <div class="p-5 bg-tertiary-container/10 rounded-2xl border border-tertiary-container/5">
+        <p class="text-[9px] font-bold text-tertiary uppercase tracking-widest mb-2">Platform Pulse</p>
+        <p class="text-3xl font-black text-tertiary tracking-tighter">{{ conversion_rate|default:"--" }}</p>
+    </div>
+</div>

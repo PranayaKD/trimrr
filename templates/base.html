@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>{% block title %}Trimrr — Shorten Your Links, Grow Your Brand{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Trimrr is a free, fast URL shortener with real-time analytics, custom aliases, QR code generation, and click tracking. Shorten links, track clicks, and grow your brand.{% endblock %}">
+    <meta name="keywords" content="url shortener, link shortener, short url, custom short links, link analytics, click tracking, QR code generator, shorten links free, branded links, link management, trimrr, url tracker, short link creator, analytics dashboard">
+    <meta name="author" content="Pranay">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Trimrr — Shorten Your Links, Grow Your Brand">
+    <meta property="og:description" content="Free URL shortener with real-time analytics, custom aliases, and QR code generation.">
+    <meta property="og:type" content="website">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#001a42",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#311400",
+                        "tertiary": "#924700",
+                        "on-surface": "#191c1e",
+                        "secondary-container": "#dae2fd",
+                        "on-secondary-fixed": "#131b2e",
+                        "outline": "#727785",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5c647a",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "surface-container": "#eceef0",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#424754",
+                        "surface-dim": "#d8dadc",
+                        "inverse-primary": "#adc6ff",
+                        "tertiary-fixed": "#ffdcc6",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-container": "#b75b00",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-container": "#fefcff",
+                        "outline-variant": "#c2c6d6",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#adc6ff",
+                        "primary": "#0058be",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-variant": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#565e74",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#005ac2",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#dae2fd",
+                        "background": "#f7f9fb",
+                        "primary-container": "#2170e4",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .bg-gradient-primary { background: linear-gradient(135deg, #0058be 0%, #2170e4 100%); }
+        .text-clamp-hero { font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.1; }
+    </style>
+    {% block extra_head %}{% endblock %}
+</head>
+<body class="bg-surface text-on-surface antialiased">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm">
+        <div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-8">
+                <a href="{% url 'home' %}" class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white">Trimrr</a>
+                <div class="hidden md:flex gap-6">
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors font-['Inter'] tracking-tight" href="{% url 'home' %}">Home</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors font-['Inter'] tracking-tight" href="{% url 'home' %}#features">Features</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors font-['Inter'] tracking-tight" href="{% url 'pricing' %}">Pricing</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'dashboard' %}" class="hidden md:block px-5 py-2 text-primary font-medium hover:bg-primary/5 rounded-lg transition-all scale-95 active:scale-90">Dashboard</a>
+                    <form method="post" action="{% url 'account_logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="bg-gradient-primary text-white px-6 py-2 rounded-lg font-semibold shadow-lg shadow-blue-500/20 scale-95 active:scale-90 transition-transform">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'account_login' %}" class="hidden md:block px-5 py-2 text-primary font-medium hover:bg-primary/5 rounded-lg transition-all scale-95 active:scale-90">Login</a>
+                    <a href="{% url 'account_signup' %}" class="bg-gradient-primary text-white px-6 py-2 rounded-lg font-semibold shadow-lg shadow-blue-500/20 scale-95 active:scale-90 transition-transform">Get Started</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-24 min-h-screen relative">
+        <!-- Messages Display -->
+        {% if messages %}
+        <div id="toast-container" class="fixed top-24 right-6 z-[100] flex flex-col gap-2">
+            {% for message in messages %}
+            <div class="toast-msg px-6 py-4 rounded-xl shadow-2xl backdrop-blur-md border border-white/20 flex items-center gap-3 {% if message.tags == 'success' %}bg-primary text-on-primary{% else %}bg-error text-on-error{% endif %}" style="animation: slideIn 0.4s ease-out, fadeOut 0.5s ease-in 2.5s forwards;">
+                <span class="material-symbols-outlined">{% if message.tags == 'success' %}check_circle{% else %}error_outline{% endif %}</span>
+                <span class="text-sm font-semibold tracking-tight">{{ message }}</span>
+            </div>
+            {% endfor %}
+        </div>
+        <style>
+            @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+            @keyframes fadeOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(-10px); } }
+        </style>
+        <script>setTimeout(() => { const c = document.getElementById('toast-container'); if(c) c.remove(); }, 3000);</script>
+        {% endif %}
+        
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-500 font-['Inter'] text-xs">
+        <div class="flex flex-col items-center py-16 px-6 gap-12 text-center max-w-7xl mx-auto">
+            <div class="space-y-4">
+                <span class="text-lg font-bold text-white block">Trimrr</span>
+                <p class="text-slate-400 max-w-xs">Precision link management for the modern digital architect.</p>
+            </div>
+            <div class="flex flex-wrap gap-6 md:gap-8 border-t border-slate-800 pt-8 w-full justify-center">
+                <a class="hover:text-white transition-colors" href="{% url 'pricing' %}">Pricing</a>
+                <a class="hover:text-white transition-colors" href="{% url 'home' %}#features">Features</a>
+                <a class="hover:text-white transition-colors" href="{% url 'privacy' %}">Privacy Policy</a>
+                <a class="hover:text-white transition-colors" href="{% url 'terms' %}">Terms & Conditions</a>
+                <a class="hover:text-white transition-colors" href="{% url 'contact' %}">Contact</a>
+            </div>
+            <div class="flex flex-col items-center gap-2">
+                <p class="text-slate-600">© 2026 Trimrr. All rights reserved.</p>
+                <p class="text-slate-500">Developed by <a href="https://pranayakd.in" target="_blank" rel="noopener" class="text-primary hover:text-white transition-colors font-semibold">Pranay</a></p>
+            </div>
+        </div>
+    </footer>
+
+    {% block extra_body %}{% endblock %}
+</body>
+</html>

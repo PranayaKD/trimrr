@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pricing | Trimrr Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#311400",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#dae2fd",
+                        "on-background": "#191c1e",
+                        "on-secondary-container": "#5c647a",
+                        "on-surface-variant": "#424754",
+                        "on-primary": "#ffffff",
+                        "outline": "#727785",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#2170e4",
+                        "on-error": "#ffffff",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed": "#131b2e",
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-primary": "#adc6ff",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f2f4f6",
+                        "on-primary-fixed": "#001a42",
+                        "tertiary": "#924700",
+                        "surface": "#f7f9fb",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "primary": "#0058be",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-container": "#fefcff",
+                        "surface-tint": "#005ac2",
+                        "surface-dim": "#d8dadc",
+                        "secondary-container": "#dae2fd",
+                        "background": "#f7f9fb",
+                        "outline-variant": "#c2c6d6",
+                        "surface-bright": "#f7f9fb",
+                        "primary-fixed": "#d8e2ff",
+                        "on-error-container": "#93000a",
+                        "surface-container": "#eceef0",
+                        "primary-fixed-dim": "#adc6ff",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-highest": "#e0e3e5",
+                        "tertiary-container": "#b75b00",
+                        "tertiary-fixed": "#ffdcc6",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary": "#565e74",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-container-high": "#e6e8ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .pricing-gradient {
+            background: linear-gradient(135deg, #0058be 0%, #2170e4 100%);
+        }
+        .glass-header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto font-['Inter'] tracking-tight">
+<div class="text-xl font-bold text-slate-900 dark:text-white">Trimrr</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Analytics</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors" href="#">Settings</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="bg-primary text-on-primary px-5 py-2 rounded-lg font-semibold hover:opacity-80 transition-all active:scale-95">
+                    Create
+                </button>
+<img alt="User Profile" class="w-9 h-9 rounded-full object-cover border border-outline-variant/20" data-alt="Close up portrait of a professional man in his 30s with a friendly smile, clean studio lighting, soft neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB254yI_FTQiCyLilvVEccaOptk1iIwuMEU3Uju-e9SCb5lW80l5TuLLa-_TSwW0fMQAhwjhe4Ab5JYT0Q_lUxNyaS22BQftKXorH9H2gDBzBct_oJxsaxULNqR4_X8FqKSyE4brKIgiIXA1eA04kxSM3TzBgcUZt_ACaMleF_79z41yRvdeViY06_VK7jnVEf5vPYOibj9nQqib_3e_4EjABx9ZBSz71nJCgVArLsqA4n4zkexsOtNq-aGoUfZw-zghNbqUd_xmLQ"/>
+</div>
+</div>
+</header>
+<main class="min-h-screen">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 pt-20 pb-12 text-center">
+<h1 class="text-[2.75rem] font-extrabold tracking-tight text-on-background mb-6">
+                Simple, Transparent Pricing
+            </h1>
+<p class="text-on-surface-variant text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+                Choose the architectural foundation for your digital reach. Scale your precision without hidden complexities.
+            </p>
+<!-- Toggle -->
+<div class="flex justify-center items-center gap-4 mb-16">
+<span class="text-sm font-semibold text-on-surface">Monthly</span>
+<div class="w-14 h-7 bg-surface-container-highest rounded-full p-1 cursor-pointer flex items-center justify-end relative">
+<div class="w-5 h-5 bg-primary rounded-full shadow-sm"></div>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm font-semibold text-on-surface">Yearly</span>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] px-2.5 py-0.5 rounded-full font-bold tracking-wider">
+                        SAVE 20%
+                    </span>
+</div>
+</div>
+</section>
+<!-- Pricing Cards -->
+<section class="max-w-7xl mx-auto px-6 pb-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Free Plan -->
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:shadow-lg transition-shadow">
+<div class="mb-8">
+<h3 class="text-label-sm font-bold tracking-[0.05em] text-on-surface-variant uppercase mb-2">Free</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-bold text-on-background">$0</span>
+<span class="text-on-surface-variant text-sm">/mo</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">50 Short links/mo</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">Basic analytics</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">Standard redirects</span>
+</li>
+</ul>
+<button class="w-full py-3 px-4 rounded-lg bg-secondary-container text-on-secondary-container font-semibold hover:opacity-90 transition-all">
+                    Get Started
+                </button>
+</div>
+<!-- Pro Plan (High Navy) -->
+<div class="pricing-gradient p-8 rounded-xl flex flex-col h-full shadow-xl transform md:scale-105 relative z-10 border border-primary-container">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-tertiary-container text-on-tertiary-container px-4 py-1 rounded-full text-[11px] font-bold tracking-widest uppercase">
+                    Most Popular
+                </div>
+<div class="mb-8">
+<h3 class="text-label-sm font-bold tracking-[0.05em] text-blue-100 uppercase mb-2">Pro</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-bold text-white">$9</span>
+<span class="text-blue-100 text-sm">/mo</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-200 text-sm mt-0.5" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="text-sm text-white">Unlimited Short links</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-200 text-sm mt-0.5" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="text-sm text-white">Advanced editorial metrics</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-200 text-sm mt-0.5" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="text-sm text-white">Custom domain support</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-blue-200 text-sm mt-0.5" data-icon="check" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check</span>
+<span class="text-sm text-white">QR Code generator</span>
+</li>
+</ul>
+<button class="w-full py-3 px-4 rounded-lg bg-white text-primary font-bold shadow-sm hover:bg-slate-50 transition-all active:scale-95">
+                    Upgrade to Pro
+                </button>
+</div>
+<!-- Business Plan -->
+<div class="bg-surface-container-lowest p-8 rounded-xl flex flex-col h-full border border-outline-variant/10 hover:shadow-lg transition-shadow">
+<div class="mb-8">
+<h3 class="text-label-sm font-bold tracking-[0.05em] text-on-surface-variant uppercase mb-2">Business</h3>
+<div class="flex items-baseline gap-1">
+<span class="text-4xl font-bold text-on-background">$29</span>
+<span class="text-on-surface-variant text-sm">/mo</span>
+</div>
+</div>
+<ul class="space-y-4 mb-10 flex-grow">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">Everything in Pro</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">Team collaboration (10 seats)</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">API access &amp; webhooks</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary text-sm mt-0.5" data-icon="check">check</span>
+<span class="text-sm text-on-surface">SLA &amp; Priority support</span>
+</li>
+</ul>
+<button class="w-full py-3 px-4 rounded-lg border-2 border-primary text-primary font-bold hover:bg-primary/5 transition-all">
+                    Contact Sales
+                </button>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="max-w-4xl mx-auto px-6 py-24">
+<h2 class="text-2xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+<div class="space-y-2">
+<!-- FAQ 1 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+<span class="font-semibold text-on-surface">Can I change my plan later?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="expand_more">expand_more</span>
+</button>
+<div class="px-6 pb-5 text-on-surface-variant text-sm leading-relaxed">
+                        Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately, and billing is adjusted pro-rata.
+                    </div>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+<span class="font-semibold text-on-surface">Do you offer custom domains?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="expand_more">expand_more</span>
+</button>
+<div class="px-6 pb-5 hidden text-on-surface-variant text-sm leading-relaxed">
+                        Absolutely. Pro and Business users can connect multiple custom domains to maintain brand consistency.
+                    </div>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden">
+<button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+<span class="font-semibold text-on-surface">What kind of analytics do I get?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="expand_more">expand_more</span>
+</button>
+<div class="px-6 pb-5 hidden text-on-surface-variant text-sm leading-relaxed">
+                        Even our Free tier includes click counts. Pro adds location data, device types, and referral sources in a beautiful editorial dashboard.
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-slate-100 dark:border-slate-900 bg-slate-50 dark:bg-slate-950">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center font-['Inter'] text-sm">
+<div class="mb-6 md:mb-0">
+<span class="font-bold text-slate-900 dark:text-white mr-4">Trimrr</span>
+<span class="text-slate-500">© 2024 Trimrr Editorial. Built for Precision.</span>
+</div>
+<div class="flex gap-8">
+<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">Terms</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">API Docs</a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#">Status</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pt-2 pb-safe bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl z-50 md:hidden rounded-t-2xl shadow-[0_-4px_20px_rgba(0,0,0,0.05)] border-t border-slate-100 dark:border-slate-800">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Inter'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 rounded-xl px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="link" data-weight="fill" style="font-variation-settings: 'FILL' 1;">link</span>
+<span class="font-['Inter'] text-[10px] font-medium">Links</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="query_stats">query_stats</span>
+<span class="font-['Inter'] text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 py-2" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[10px] font-medium">Settings</span>
+</a>
+</nav>
+</body></html>

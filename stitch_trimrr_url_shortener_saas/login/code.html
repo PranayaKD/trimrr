@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Trimrr - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#001a42",
+                    "surface-container-high": "#e6e8ea",
+                    "primary-fixed": "#d8e2ff",
+                    "surface-bright": "#f7f9fb",
+                    "surface-container-low": "#f2f4f6",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed": "#311400",
+                    "tertiary": "#924700",
+                    "on-surface": "#191c1e",
+                    "secondary-container": "#dae2fd",
+                    "on-secondary-fixed": "#131b2e",
+                    "outline": "#727785",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "on-primary": "#ffffff",
+                    "on-secondary-container": "#5c647a",
+                    "tertiary-fixed-dim": "#ffb786",
+                    "surface-container": "#eceef0",
+                    "surface-container-highest": "#e0e3e5",
+                    "on-surface-variant": "#424754",
+                    "surface-dim": "#d8dadc",
+                    "inverse-primary": "#adc6ff",
+                    "tertiary-fixed": "#ffdcc6",
+                    "inverse-on-surface": "#eff1f3",
+                    "tertiary-container": "#b75b00",
+                    "on-tertiary-container": "#fffbff",
+                    "on-primary-container": "#fefcff",
+                    "outline-variant": "#c2c6d6",
+                    "error-container": "#ffdad6",
+                    "primary-fixed-dim": "#adc6ff",
+                    "primary": "#0058be",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "surface-variant": "#e0e3e5",
+                    "error": "#ba1a1a",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#565e74",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-tint": "#005ac2",
+                    "surface": "#f7f9fb",
+                    "secondary-fixed": "#dae2fd",
+                    "background": "#f7f9fb",
+                    "primary-container": "#2170e4",
+                    "on-primary-fixed-variant": "#004395",
+                    "on-tertiary-fixed-variant": "#723600",
+                    "on-background": "#191c1e"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Inter"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-gradient {
+            background: linear-gradient(135deg, #0058be 0%, #2170e4 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar (Shell Suppression: Included as Branding Anchor for Entry Page) -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white font-headline">
+                Trimrr
+            </div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors font-['Inter'] tracking-tight" href="#">Features</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-500 transition-colors font-['Inter'] tracking-tight" href="#">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:text-blue-500 transition-colors" href="#">Login</a>
+<button class="editorial-gradient text-white px-5 py-2 rounded-lg font-semibold text-sm shadow-lg shadow-blue-500/20 scale-95 active:scale-90 transition-transform">
+                    Get Started
+                </button>
+</div>
+</div>
+</nav>
+<main class="min-h-screen flex items-center justify-center px-4 pt-20 pb-12 bg-surface">
+<!-- Login Card Container -->
+<div class="w-full max-w-[440px]">
+<!-- Branding/Identity -->
+<div class="text-center mb-10">
+<div class="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary-container text-white mb-6 shadow-xl shadow-primary/10">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">link</span>
+</div>
+<h1 class="text-[2.75rem] font-bold tracking-tighter text-on-surface leading-tight font-headline">
+                    Welcome back
+                </h1>
+<p class="text-on-surface-variant mt-2 font-medium tracking-tight">
+                    Precision analytics for your digital footprint.
+                </p>
+</div>
+<!-- The Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0px_10px_30px_rgba(15,23,42,0.04),0px_4px_8px_rgba(15,23,42,0.02)]">
+<form class="space-y-6" onsubmit="return false;">
+<!-- Email Field -->
+<div class="space-y-2">
+<label class="block text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant font-label" for="email">
+                            Email Address
+                        </label>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg px-4 py-3 text-on-surface placeholder:text-outline focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all outline-none" id="email" name="email" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<label class="block text-[0.6875rem] font-bold uppercase tracking-widest text-on-surface-variant font-label" for="password">
+                                Password
+                            </label>
+<a class="text-[0.6875rem] font-bold text-primary hover:text-primary-container transition-colors uppercase tracking-widest" href="#">
+                                Forgot password?
+                            </a>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/40 rounded-lg px-4 py-3 text-on-surface placeholder:text-outline focus:ring-4 focus:ring-primary/10 focus:border-primary transition-all outline-none" id="password" name="password" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<!-- Login Button -->
+<button class="w-full editorial-gradient text-on-primary py-4 rounded-lg font-bold text-sm shadow-lg shadow-primary/20 scale-100 active:scale-95 transition-transform" type="submit">
+                        Login
+                    </button>
+</form>
+<!-- Divider Alternative (Tonal Layering) -->
+<div class="mt-8 pt-8 border-t border-surface-container">
+<p class="text-center text-on-surface-variant text-sm font-medium">
+                        Don't have an account? 
+                        <a class="text-primary font-bold hover:underline ml-1" href="#">Register</a>
+</p>
+</div>
+</div>
+<!-- Secondary Actions/Metadata -->
+<div class="mt-8 flex flex-col items-center gap-4">
+<div class="flex gap-4">
+<div class="flex items-center gap-1.5 px-3 py-1 bg-tertiary-container/10 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-tertiary">Enterprise Ready</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 bg-primary/5 rounded-full">
+<span class="material-symbols-outlined text-xs text-primary" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Secure Auth</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shell Authority: Content Only) -->
+<footer class="w-full mt-auto bg-slate-950 border-t border-slate-800">
+<div class="flex flex-col items-center py-12 px-6 gap-8 text-center max-w-7xl mx-auto">
+<div class="text-lg font-bold text-white tracking-tighter">Trimrr</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-500 hover:text-white transition-colors text-xs font-['Inter']" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-white transition-colors text-xs font-['Inter']" href="#">Terms</a>
+<a class="text-slate-500 hover:text-white transition-colors text-xs font-['Inter']" href="#">API Documentation</a>
+<a class="text-slate-500 hover:text-white transition-colors text-xs font-['Inter']" href="#">Status</a>
+</div>
+<p class="text-slate-500 text-xs font-['Inter']">
+                © 2024 Trimrr Architecture. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>

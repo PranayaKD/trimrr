@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#001a42",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#311400",
+                        "tertiary": "#924700",
+                        "on-surface": "#191c1e",
+                        "secondary-container": "#dae2fd",
+                        "on-secondary-fixed": "#131b2e",
+                        "outline": "#727785",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "on-secondary-container": "#5c647a",
+                        "tertiary-fixed-dim": "#ffb786",
+                        "surface-container": "#eceef0",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#424754",
+                        "surface-dim": "#d8dadc",
+                        "inverse-primary": "#adc6ff",
+                        "tertiary-fixed": "#ffdcc6",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-container": "#b75b00",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-container": "#fefcff",
+                        "outline-variant": "#c2c6d6",
+                        "error-container": "#ffdad6",
+                        "primary-fixed-dim": "#adc6ff",
+                        "primary": "#0058be",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "surface-variant": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#565e74",
+                        "on-error-container": "#93000a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#005ac2",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed": "#dae2fd",
+                        "background": "#f7f9fb",
+                        "primary-container": "#2170e4",
+                        "on-primary-fixed-variant": "#004395",
+                        "on-tertiary-fixed-variant": "#723600",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-grid-subtle {
+            background-image: radial-gradient(#c2c6d6 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation (Contextually Suppressed labels but brand presence remains) -->
+<header class="bg-white/80 dark:bg-slate-900/80 backdrop-blur-md fixed top-0 w-full z-50 shadow-sm">
+<div class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-slate-900 dark:text-white font-['Inter']">
+                Trimrr
+            </div>
+<div class="hidden md:flex gap-8">
+<!-- Navigation links from JSON (None active for 404 page) -->
+<a class="text-slate-600 dark:text-slate-400 font-['Inter'] tracking-tight hover:text-blue-500 transition-colors" href="#">Features</a>
+<a class="text-slate-600 dark:text-slate-400 font-['Inter'] tracking-tight hover:text-blue-500 transition-colors" href="#">Pricing</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-slate-600 dark:text-slate-400 text-sm font-medium hover:text-blue-500 transition-colors" href="#">Login</a>
+<a class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-transform active:scale-95 shadow-lg shadow-blue-500/20" href="#">Get Started</a>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="min-h-screen flex items-center justify-center pt-20 px-6 bg-grid-subtle">
+<div class="relative w-full max-w-2xl flex flex-col items-center text-center">
+<!-- Architectural Background Detail -->
+<div class="absolute -top-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary-container/30 rounded-full blur-3xl"></div>
+<!-- 404 Graphic/Text -->
+<div class="relative mb-8">
+<h1 class="text-[12rem] md:text-[18rem] font-black leading-none tracking-tighter text-primary opacity-10 select-none">
+                    404
+                </h1>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-8xl md:text-9xl opacity-20">link_off</span>
+</div>
+</div>
+<!-- Content Card -->
+<div class="relative z-10 bg-surface-container-lowest p-8 md:p-12 rounded-xl shadow-[0px_10px_30px_rgba(15,23,42,0.04),0px_4px_8px_rgba(15,23,42,0.02)] max-w-lg">
+<h2 class="text-2xl md:text-3xl font-bold tracking-tight text-on-surface mb-4">
+                    Link not found or inactive
+                </h2>
+<p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10 font-normal">
+                    This link may have been removed or deactivated. Please check the URL or contact the owner of the link for access.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto bg-gradient-to-br from-primary to-primary-container text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:shadow-primary/20 transition-all active:scale-95" href="/">
+                        Go to Homepage
+                    </a>
+<button class="w-full sm:w-auto bg-secondary-container text-on-secondary-fixed-variant px-8 py-4 rounded-xl font-semibold hover:bg-secondary-fixed transition-colors active:scale-95">
+                        Report Issue
+                    </button>
+</div>
+</div>
+<!-- Illustration/Visual Detail -->
+<div class="mt-16 w-full max-w-md opacity-40">
+<div class="h-1 w-full bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-primary w-1/3"></div>
+</div>
+<div class="flex justify-between mt-2 px-1">
+<span class="text-[10px] font-bold uppercase tracking-widest text-outline">System Check</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Connection Terminated</span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer - Simplified for 404 -->
+<footer class="bg-slate-950 w-full mt-auto">
+<div class="flex flex-col items-center py-12 px-6 gap-8 text-center max-w-7xl mx-auto">
+<div class="text-lg font-bold text-white font-['Inter']">Trimrr</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-slate-500 hover:text-white transition-colors text-xs font-['Inter']" href="#">Privacy</a>
+<a class="text-slate-500 hover:text-white transition-colors text-xs font-['Inter']" href="#">Terms</a>
+<a class="text-slate-500 hover:text-white transition-colors text-xs font-['Inter']" href="#">API Documentation</a>
+<a class="text-slate-500 hover:text-white transition-colors text-xs font-['Inter']" href="#">Status</a>
+</div>
+<div class="text-slate-500 text-xs font-['Inter']">
+                © 2024 Trimrr Architecture. All rights reserved.
+            </div>
+</div>
+</footer>
+<!-- Mobile Bottom Navigation - Suppressed because this is a 404 "dead end" relative to global nav -->
+<!-- Suppression logic applied: focused task/error journey -->
+</body></html>

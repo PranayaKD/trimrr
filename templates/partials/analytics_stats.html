@@ -1,0 +1,51 @@
+<section id="analytics-stats" hx-get="{% url 'link_analytics' link.short_code %}" hx-trigger="every 5s" hx-select="#analytics-stats" hx-swap="outerHTML" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <!-- Total Clicks -->
+    <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-primary/10 transition-all hover:shadow-md">
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Global Clicks</span>
+            <div class="w-10 h-10 bg-primary-container/10 rounded-full flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">touch_app</span>
+            </div>
+        </div>
+        <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-black tracking-tighter text-on-surface">{{ total_clicks }}</span>
+            <span class="text-[10px] font-bold text-primary bg-primary-container/10 px-2 py-0.5 rounded-full">Real-time</span>
+        </div>
+    </div>
+    
+    <!-- Unique Visitors -->
+    <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-secondary/10 transition-all hover:shadow-md">
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Unique Visitors</span>
+            <div class="w-10 h-10 bg-secondary-container/30 rounded-full flex items-center justify-center text-secondary">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">group</span>
+            </div>
+        </div>
+        <div class="flex items-baseline gap-2">
+            <span class="text-4xl font-black tracking-tighter text-on-surface">{{ unique_visitors }}</span>
+            <span class="text-[10px] font-bold text-on-surface-variant bg-surface-container-low px-2 py-0.5 rounded-full">Estimated</span>
+        </div>
+    </div>
+
+    <!-- Last Clicked -->
+    <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border-b-4 border-tertiary/10 transition-all hover:shadow-md">
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Last Interaction</span>
+            <div class="w-10 h-10 bg-tertiary-fixed rounded-full flex items-center justify-center text-tertiary">
+                <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">history</span>
+            </div>
+        </div>
+        <div class="flex flex-col gap-1">
+            <span class="text-lg font-black tracking-tight text-tertiary">
+                {% if last_click %}
+                    {{ last_click.timestamp|timesince }} ago
+                {% else %}
+                    No activity yet
+                {% endif %}
+            </span>
+            <span class="text-[10px] font-medium text-on-surface-variant uppercase">
+                {% if last_click %}{{ last_click.timestamp|date:"M d, H:i" }}{% endif %}
+            </span>
+        </div>
+    </div>
+</section>

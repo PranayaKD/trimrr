@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Privacy Policy — Trimrr{% endblock %}
+{% block meta_description %}Trimrr Privacy Policy. Learn how we collect, use, and protect your data when you use our URL shortening and analytics platform.{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto px-6 py-16 md:py-24">
+    <div class="mb-12">
+        <a class="flex items-center gap-1 text-primary hover:text-primary-container transition-colors text-xs font-bold uppercase tracking-widest mb-6" href="{% url 'home' %}">
+            <span class="material-symbols-outlined text-sm">arrow_back</span>
+            Home
+        </a>
+        <h1 class="text-4xl md:text-5xl font-black tracking-tighter text-on-surface mb-4">Privacy Policy</h1>
+        <p class="text-on-surface-variant font-medium">Last updated: April 2025</p>
+    </div>
+
+    <div class="prose prose-slate max-w-none space-y-10">
+        <section class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-sm">
+            <h2 class="text-xl font-black tracking-tight text-on-surface mb-4">1. Information We Collect</h2>
+            <p class="text-on-surface-variant leading-relaxed mb-4">When you use Trimrr, we may collect the following information:</p>
+            <ul class="list-disc list-inside space-y-2 text-on-surface-variant">
+                <li><strong class="text-on-surface">Account Information:</strong> Email address, username, and password when you register.</li>
+                <li><strong class="text-on-surface">Link Data:</strong> Original URLs you shorten and custom aliases you create.</li>
+                <li><strong class="text-on-surface">Analytics Data:</strong> IP addresses, browser type, device type, and referrer URLs of visitors who click your shortened links.</li>
+                <li><strong class="text-on-surface">Usage Data:</strong> How you interact with our platform, including pages visited and features used.</li>
+            </ul>
+        </section>
+
+        <section class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-sm">
+            <h2 class="text-xl font-black tracking-tight text-on-surface mb-4">2. How We Use Your Information</h2>
+            <ul class="list-disc list-inside space-y-2 text-on-surface-variant">
+                <li>To provide and maintain our URL shortening and analytics services.</li>
+                <li>To generate click statistics, device reports, and geographic insights for your links.</li>
+                <li>To improve, personalize, and expand our platform.</li>
+                <li>To communicate with you about your account and updates.</li>
+                <li>To detect and prevent fraud or abuse of the platform.</li>
+            </ul>
+        </section>
+
+        <section class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-sm">
+            <h2 class="text-xl font-black tracking-tight text-on-surface mb-4">3. Data Security</h2>
+            <p class="text-on-surface-variant leading-relaxed">We implement industry-standard security measures to protect your personal information. Passwords are hashed and never stored in plain text. All API communications are secured with JWT tokens. However, no method of electronic transmission is 100% secure.</p>
+        </section>
+
+        <section class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-sm">
+            <h2 class="text-xl font-black tracking-tight text-on-surface mb-4">4. Cookies & Tracking</h2>
+            <p class="text-on-surface-variant leading-relaxed">Trimrr uses essential cookies to maintain your login session. We do not use third-party advertising cookies. Analytics tracking is limited to click-level data on shortened links to provide you with performance insights.</p>
+        </section>
+
+        <section class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-sm">
+            <h2 class="text-xl font-black tracking-tight text-on-surface mb-4">5. Your Rights</h2>
+            <p class="text-on-surface-variant leading-relaxed mb-4">You have the right to:</p>
+            <ul class="list-disc list-inside space-y-2 text-on-surface-variant">
+                <li>Access and download your personal data at any time.</li>
+                <li>Request correction of inaccurate data.</li>
+                <li>Delete your account and all associated link data.</li>
+                <li>Opt out of non-essential communications.</li>
+            </ul>
+        </section>
+
+        <section class="bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 shadow-sm">
+            <h2 class="text-xl font-black tracking-tight text-on-surface mb-4">6. Contact Us</h2>
+            <p class="text-on-surface-variant leading-relaxed">If you have any questions about this Privacy Policy, please <a href="{% url 'contact' %}" class="text-primary font-bold hover:underline">contact us</a>.</p>
+        </section>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+<!-- Sidebar / Navigation Partial -->
+<!-- Hover Trigger Zone -->
+<div @mouseenter="sidebarHover = true" 
+     class="fixed left-0 top-0 h-full w-2 z-[55] hidden md:block"></div>
+
+<aside :class="(sidebarOpen || sidebarHover) ? 'translate-x-0' : '-translate-x-full'"
+       @mouseenter="sidebarHover = true" 
+       @mouseleave="sidebarHover = false"
+       class="fixed left-0 top-0 h-full w-64 bg-slate-950 shadow-2xl z-[60] flex flex-col transition-all duration-500 cubic-bezier(0.4, 0, 0.2, 1) border-r border-white/5 overflow-hidden">
+    
+    <div class="px-6 py-8 flex items-center justify-between min-w-[256px]">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-primary rounded-lg flex-shrink-0 flex items-center justify-center shadow-lg shadow-primary/20">
+                <span class="material-symbols-outlined text-white text-lg">link</span>
+            </div>
+            <div :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300">
+                <h1 class="text-white font-black text-xl leading-none tracking-tighter">Trimrr</h1>
+                <p class="font-['Inter'] uppercase tracking-[0.2em] text-[8px] font-bold text-slate-500 mt-1">Architecture</p>
+            </div>
+        </div>
+        <button @click="sidebarOpen = false" class="md:hidden text-slate-400 hover:text-white transition-colors">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+    </div>
+
+    <nav class="flex-1 flex flex-col gap-1.5 px-3 min-w-[256px]">
+        <a class="flex items-center gap-4 px-4 py-3.5 {% if request.resolver_match.url_name == 'dashboard' %}bg-primary text-white shadow-xl shadow-primary/20{% else %}text-slate-400 hover:text-white hover:bg-white/5{% endif %} rounded-xl transition-all text-sm font-bold active:scale-95" href="{% url 'dashboard' %}">
+            <span class="material-symbols-outlined flex-shrink-0" style="font-variation-settings: 'FILL' {% if request.resolver_match.url_name == 'dashboard' %}1{% else %}0{% endif %};">dashboard</span>
+            <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Pulse Dashboard</span>
+        </a>
+        <a class="flex items-center gap-4 px-4 py-3.5 {% if request.resolver_match.url_name == 'my_links' %}bg-primary text-white shadow-xl shadow-primary/20{% else %}text-slate-400 hover:text-white hover:bg-white/5{% endif %} rounded-xl transition-all text-sm font-bold group active:scale-95" href="{% url 'my_links' %}">
+            <span class="material-symbols-outlined flex-shrink-0" style="font-variation-settings: 'FILL' {% if request.resolver_match.url_name == 'my_links' %}1{% else %}0{% endif %};">database</span>
+            <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Account Ledger</span>
+        </a>
+        <a class="flex items-center gap-4 px-4 py-3.5 {% if request.resolver_match.url_name == 'settings' %}bg-primary text-white shadow-xl shadow-primary/20{% else %}text-slate-400 hover:text-white hover:bg-white/5{% endif %} rounded-xl transition-all text-sm font-bold group active:scale-95" href="{% url 'settings' %}">
+            <span class="material-symbols-outlined flex-shrink-0" style="font-variation-settings: 'FILL' {% if request.resolver_match.url_name == 'settings' %}1{% else %}0{% endif %};">settings_accessibility</span>
+            <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Global Config</span>
+        </a>
+    </nav>
+    
+    <div class="mt-auto px-3 py-6 space-y-4 min-w-[256px]">
+        <div class="bg-gradient-to-br from-white/5 to-transparent p-4 rounded-2xl border border-white/5 mb-4">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-slate-500 mb-2">Target tier</p>
+            <div class="flex items-center justify-between">
+                <p class="text-xs font-bold text-white flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+                    Enterprise
+                </p>
+                <span class="text-[8px] font-black bg-white/10 text-white/40 px-2 py-0.5 rounded-full uppercase tracking-tighter">Coming Soon</span>
+            </div>
+        </div>
+        <button @click="openCreateModal = true" class="w-full bg-white text-slate-900 py-4 px-4 rounded-2xl font-black text-sm flex items-center justify-center gap-2 hover:bg-slate-100 transition-all active:scale-[0.98] shadow-xl">
+            <span class="material-symbols-outlined text-lg flex-shrink-0">add_box</span>
+            <span :class="sidebarHover ? 'block' : 'md:hidden'">New Asset</span>
+        </button>
+        <form method="post" action="{% url 'account_logout' %}" class="pt-2">
+            {% csrf_token %}
+            <button type="submit" class="flex items-center gap-4 px-4 py-4 text-slate-500 hover:text-rose-400 transition-all text-[11px] font-bold uppercase tracking-widest w-full text-left">
+                <span class="material-symbols-outlined text-lg flex-shrink-0">power_settings_new</span>
+                <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Terminate</span>
+            </button>
+        </form>
+    </div>
+</aside>
