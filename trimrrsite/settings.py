@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'trimrrsite.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=f"postgres://{config('DB_USER')}:{config('DB_PASSWORD')}@{config('DB_HOST', default='localhost')}:{config('DB_PORT', default='5432')}/{config('DB_NAME')}",
+        default=config('DATABASE_URL', default=f"postgres://{config('DB_USER', default='user')}:{config('DB_PASSWORD', default='pass')}@{config('DB_HOST', default='localhost')}:{config('DB_PORT', default='5432')}/{config('DB_NAME', default='db')}"),
         conn_max_age=600,
         ssl_require=True if not DEBUG else False
     )
