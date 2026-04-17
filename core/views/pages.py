@@ -352,7 +352,7 @@ class ContactView(View):
                 full_subject,
                 full_message,
                 email,
-                ['support@trimrr.co'],
+                ['dashpranaya786@gmail.com'],
                 fail_silently=False,
             )
             messages.success(request, "Message sent successfully! We'll get back to you soon.")

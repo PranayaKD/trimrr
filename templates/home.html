@@ -7,14 +7,14 @@
         <div class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold tracking-widest uppercase">
             <span>Fast. Simple. Powerful. 🔗</span>
         </div>
-        <h1 class="text-clamp-hero font-extrabold tracking-tight text-on-surface">
+        <h1 class="text-clamp-hero font-extrabold tracking-tight text-on-surface hero-reveal">
             Shorten Your Links, <span class="text-primary">Grow Your Brand</span>
         </h1>
-        <p class="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed font-medium">
+        <p class="text-lg md:text-xl text-on-surface-variant max-w-lg leading-relaxed font-medium hero-reveal hero-reveal-delay-1">
             Paste your long URL and get a short, trackable link in seconds. Powerful analytics and custom domains at your fingertips.
         </p>
         
-        <div class="space-y-6">
+        <div class="space-y-6 hero-reveal hero-reveal-delay-2">
             <form action="{% url 'home' %}" method="POST" class="bg-surface-container-lowest shadow-2xl rounded-2xl border border-outline-variant/40 overflow-hidden" onsubmit="this.querySelector('button[type=submit]').disabled = true; this.querySelector('button[type=submit]').classList.add('opacity-50', 'cursor-not-allowed'); this.querySelector('button[type=submit]').innerHTML = 'Shortening...';">
                 {% csrf_token %}
                 <div class="flex flex-col sm:flex-row p-2 gap-2">
@@ -179,5 +179,16 @@
         });
     }
 </script>
+<style>
+    @keyframes revealUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hero-reveal { animation: revealUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards; opacity: 0; }
+    .hero-reveal-delay-1 { animation-delay: 0.1s; }
+    .hero-reveal-delay-2 { animation-delay: 0.2s; }
+    .hero-reveal-delay-3 { animation-delay: 0.3s; }
+</style>
 {% endblock %}
 {% endblock %}

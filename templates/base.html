@@ -86,10 +86,22 @@
         }
     </script>
     <style>
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         .bg-gradient-primary { background: linear-gradient(135deg, #0058be 0%, #2170e4 100%); }
         .text-clamp-hero { font-size: clamp(2.25rem, 5vw, 3.5rem); line-height: 1.1; }
+        
+        /* Buttery Smooth Interactions */
+        *, *::before, *::after { transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease, opacity 0.2s ease; }
+        
+        /* Hardware Acceleration for Modals/Sidebars */
+        .fixed, .sticky { backface-visibility: hidden; will-change: transform; -webkit-font-smoothing: antialiased; }
+        
+        /* Custom Scrollbar for Premium Feel */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(0, 88, 190, 0.1); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(0, 88, 190, 0.2); }
     </style>
     {% block extra_head %}{% endblock %}
 </head>
