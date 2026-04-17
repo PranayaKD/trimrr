@@ -17,3 +17,5 @@ celery
 requests
 qrcode
 Pillow
+cryptography
+PyJWT
