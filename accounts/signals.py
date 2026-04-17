@@ -16,10 +16,3 @@ def handle_new_user(sender, instance, created, **kwargs):
         except Exception as e:
             # Log the error but don't crash the signup flow.
             print(f"Error creating subscription for {instance.email}: {e}")
-            
-        try:
-            # Dispatch the async celery task locally or asynchronously
-            send_welcome_email_task.delay(instance.email, instance.username or instance.email)
-        except Exception as e:
-            # Log the error but don't crash the signup flow.
-            print(f"Error sending welcome email to {instance.email}: {e}")
