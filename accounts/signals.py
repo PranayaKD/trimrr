@@ -9,8 +9,17 @@ from core.tasks import send_welcome_email_task
 @receiver(post_save, sender=User)
 def handle_new_user(sender, instance, created, **kwargs):
     if created:
-        # Create a default 'free' subscription plan for the new user.
-        Subscription.objects.create(user=instance, plan='free')
-        
-        # Dispatch the async celery task locally or asynchronously
-        send_welcome_email_task.delay(instance.email, instance.username or instance.email)
+        try:
+            # Create a default 'free' subscription plan for the new user.
+            # Use get_or_create to be idempotent and avoid 500s if called twice.
+            Subscription.objects.get_or_create(user=instance, defaults={'plan': 'free'})
+        except Exception as e:
+            # Log the error but don't crash the signup flow.
+            print(f"Error creating subscription for {instance.email}: {e}")
+            
+        try:
+            # Dispatch the async celery task locally or asynchronously
+            send_welcome_email_task.delay(instance.email, instance.username or instance.email)
+        except Exception as e:
+            # Log the error but don't crash the signup flow.
+            print(f"Error sending welcome email to {instance.email}: {e}")
