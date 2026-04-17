@@ -15,7 +15,7 @@
             </div>
             <div :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300">
                 <h1 class="text-white font-black text-xl leading-none tracking-tighter">Trimrr</h1>
-                <p class="font-['Inter'] uppercase tracking-[0.2em] text-[8px] font-bold text-slate-500 mt-1">Architecture</p>
+                <p class="font-['Inter'] uppercase tracking-[0.2em] text-[8px] font-bold text-slate-500 mt-1">Shortener</p>
             </div>
         </div>
         <button @click="sidebarOpen = false" class="md:hidden text-slate-400 hover:text-white transition-colors">
@@ -26,15 +26,15 @@
     <nav class="flex-1 flex flex-col gap-1.5 px-3 min-w-[256px]">
         <a class="flex items-center gap-4 px-4 py-3.5 {% if request.resolver_match.url_name == 'dashboard' %}bg-primary text-white shadow-xl shadow-primary/20{% else %}text-slate-400 hover:text-white hover:bg-white/5{% endif %} rounded-xl transition-all text-sm font-bold active:scale-95" href="{% url 'dashboard' %}">
             <span class="material-symbols-outlined flex-shrink-0" style="font-variation-settings: 'FILL' {% if request.resolver_match.url_name == 'dashboard' %}1{% else %}0{% endif %};">dashboard</span>
-            <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Pulse Dashboard</span>
+            <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Dashboard</span>
         </a>
         <a class="flex items-center gap-4 px-4 py-3.5 {% if request.resolver_match.url_name == 'my_links' %}bg-primary text-white shadow-xl shadow-primary/20{% else %}text-slate-400 hover:text-white hover:bg-white/5{% endif %} rounded-xl transition-all text-sm font-bold group active:scale-95" href="{% url 'my_links' %}">
             <span class="material-symbols-outlined flex-shrink-0" style="font-variation-settings: 'FILL' {% if request.resolver_match.url_name == 'my_links' %}1{% else %}0{% endif %};">database</span>
-            <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Account Ledger</span>
+            <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">My Links</span>
         </a>
         <a class="flex items-center gap-4 px-4 py-3.5 {% if request.resolver_match.url_name == 'settings' %}bg-primary text-white shadow-xl shadow-primary/20{% else %}text-slate-400 hover:text-white hover:bg-white/5{% endif %} rounded-xl transition-all text-sm font-bold group active:scale-95" href="{% url 'settings' %}">
             <span class="material-symbols-outlined flex-shrink-0" style="font-variation-settings: 'FILL' {% if request.resolver_match.url_name == 'settings' %}1{% else %}0{% endif %};">settings_accessibility</span>
-            <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Global Config</span>
+            <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Settings</span>
         </a>
     </nav>
     
@@ -51,13 +51,13 @@
         </div>
         <button @click="openCreateModal = true" class="w-full bg-white text-slate-900 py-4 px-4 rounded-2xl font-black text-sm flex items-center justify-center gap-2 hover:bg-slate-100 transition-all active:scale-[0.98] shadow-xl">
             <span class="material-symbols-outlined text-lg flex-shrink-0">add_box</span>
-            <span :class="sidebarHover ? 'block' : 'md:hidden'">New Asset</span>
+            <span :class="sidebarHover ? 'block' : 'md:hidden'">Create Link</span>
         </button>
         <form method="post" action="{% url 'account_logout' %}" class="pt-2">
             {% csrf_token %}
             <button type="submit" class="flex items-center gap-4 px-4 py-4 text-slate-500 hover:text-rose-400 transition-all text-[11px] font-bold uppercase tracking-widest w-full text-left">
                 <span class="material-symbols-outlined text-lg flex-shrink-0">power_settings_new</span>
-                <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Terminate</span>
+                <span :class="sidebarHover ? 'opacity-100' : 'md:opacity-0'" class="transition-opacity duration-300 whitespace-nowrap">Logout</span>
             </button>
         </form>
     </div>
