@@ -19,7 +19,7 @@
             <div class="flex items-center gap-2">
                 <span class="text-xs bg-surface-container-low text-on-surface-variant font-mono px-2 py-1 rounded">{{ link.original_url|truncatechars:60 }}</span>
                 <span class="material-symbols-outlined text-xs text-outline">arrow_forward</span>
-                <span class="text-xs font-bold text-primary font-mono tracking-tight underline cursor-pointer" onclick="copyToClipboard('{{ request.get_host }}/{{ link.short_code }}')">trimrr.co/{{ link.short_code }}</span>
+                <span class="text-xs font-bold text-primary font-mono tracking-tight underline cursor-pointer" onclick="copyToClipboard('{{ request.get_host }}/{{ link.short_code }}')">{{ request.get_host }}/{{ link.short_code }}</span>
             </div>
         </div>
         <div class="flex items-center gap-3">

@@ -28,7 +28,7 @@
             <div class="space-y-2">
                 <label class="block text-[11px] font-bold uppercase tracking-wider text-on-surface-variant px-1" for="alias">Custom Alias (optional)</label>
                 <div class="flex items-stretch bg-surface-container-low ring-1 ring-outline-variant/40 focus-within:ring-2 focus-within:ring-primary rounded-lg transition-all overflow-hidden">
-                    <span class="flex items-center px-4 bg-surface-container text-on-surface-variant text-sm font-medium border-r border-outline-variant/20 whitespace-nowrap">trimrr.co/</span>
+                    <span class="flex items-center px-4 bg-surface-container text-on-surface-variant text-sm font-medium border-r border-outline-variant/20 whitespace-nowrap">{{ request.get_host }}/</span>
                     <input class="w-full bg-transparent border-0 focus:ring-0 py-4 px-2 text-on-surface placeholder:text-outline text-sm outline-none" id="alias" name="alias" placeholder="my-campaign" type="text" />
                 </div>
             </div>

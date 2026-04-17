@@ -50,7 +50,7 @@
                         <p class="text-sm font-medium text-on-surface-variant truncate max-w-xs">{{ link.original_url }}</p>
                     </td>
                     <td class="px-6 py-5">
-                        <a href="{% url 'link_analytics' link.short_code %}" class="text-sm font-bold text-primary hover:underline">trimrr.co/{{ link.short_code }}</a>
+                        <a href="{% url 'link_analytics' link.short_code %}" class="text-sm font-bold text-primary hover:underline">{{ request.get_host }}/{{ link.short_code }}</a>
                     </td>
                     <td class="px-6 py-5 text-center">
                         <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-black bg-primary/5 text-primary">
@@ -86,7 +86,7 @@
             <div class="flex justify-between items-start mb-4">
                 <div class="flex-1 min-w-0">
                     <p class="text-primary font-black text-lg truncate">
-                        <a href="{% url 'link_analytics' link.short_code %}" class="hover:underline">trimrr.co/{{ link.short_code }}</a>
+                        <a href="{% url 'link_analytics' link.short_code %}" class="hover:underline">{{ request.get_host }}/{{ link.short_code }}</a>
                     </p>
                     <p class="text-[11px] text-on-surface-variant truncate mt-1 font-medium">{{ link.original_url }}</p>
                 </div>

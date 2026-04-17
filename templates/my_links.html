@@ -67,7 +67,7 @@
                             </td>
                             <td class="px-6 py-5">
                                 <a href="{% url 'link_analytics' link.short_code %}" class="text-sm font-black text-primary hover:underline group-hover:translate-x-1 inline-block transition-transform">
-                                    trimrr.co/{{ link.short_code }}
+                                    {{ request.get_host }}/{{ link.short_code }}
                                 </a>
                             </td>
                             <td class="px-6 py-5 text-center">
